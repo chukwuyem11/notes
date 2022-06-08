@@ -6,12 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export":"next export",
+    "build-mobile": "next build && next export && npx cap sync"
   },
   "dependencies": {
+    "@capacitor/android": "^3.5.1",
+    "@capacitor/cli": "^3.5.1",
+    "@capacitor/core": "^3.5.1",
+    "@emotion/react": "^11.9.0",
+    "@prisma/client": "^3.14.0",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "facepaint": "^1.2.1",
+    "framer-motion": "^6.3.4",
+    "jsonwebtoken": "^8.5.1",
     "next": "12.1.6",
+    "next-auth": "^4.3.4",
+    "prisma": "^3.14.0",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-icons": "^4.3.1",
+    "react-query": "^3.39.0"
   },
   "devDependencies": {
     "eslint": "8.16.0",
