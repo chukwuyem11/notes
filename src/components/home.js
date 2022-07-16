@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import React, { useState } from "react";
 import axios from "axios";
+import { useRouter } from 'next/router'
 
 import facepaint from "facepaint";
 import { BsJournalPlus, BsJournalX, BsJournalText } from 'react-icons/bs';
@@ -28,7 +29,8 @@ const [note_body, setNote_body] = useState("")
 const [note_color, setNote_color] = useState("")
 
 
-    
+const router = useRouter()
+
   const close = () => setModalopen(false)
   const open = () => setModalopen(true)
 
@@ -67,7 +69,6 @@ const delete_note = useMutation(
 const handle_delete = (id) => {
   delete_note.mutate(id)
 }
-  
   return (
     <div>
       <AnimatePresence
@@ -133,6 +134,8 @@ const handle_delete = (id) => {
               margin: "5px 0px",
             })}
           ></div>
+          <div>
+            { session ? <div>
           {get_note.isLoading ? <text>Loading...</text> : <div>
             {get_note.data.data.notes.length === 0 ? <text>No note, add new note</text> : <div>{get_note.data.data.notes.map((note) => (
               <AnimatePresence key={note.id}>
@@ -140,7 +143,7 @@ const handle_delete = (id) => {
         initial={{ opacity: 0, y: 20 }}
   animate={{  opacity: 1, y: 0 }}
   exit={{opacity: 0,  y: 20}}
-  transition={{ delay: `0.${note.id}`, duration: 0.5 }}
+  transition={{ delay: `0.${get_note.data.data.notes.findIndex(item => item.id === note.id)}`, duration: 0.5 }}
           css={mq({
             width: ["90vw",300, 300, 300],
             backgroundColor: note.color,
@@ -208,7 +211,26 @@ const handle_delete = (id) => {
           </div>
         </motion.div></AnimatePresence>
       ))}</div>}</div>
-     }
+     }</div> : <div><button css={mq({
+      backgroundColor: "#6D61DF",
+      color: "#fff",
+      padding: 10,
+      borderRadius: 5,
+      cursor: "pointer",
+      outline: "none",
+          border: "none",
+          fontSize: 18,
+  })} onClick={() => signIn()}>Login</button> <button css={mq({
+    backgroundColor: "#6D61DF",
+    color: "#fff",
+    padding: 10,
+    borderRadius: 5,
+    cursor: "pointer",
+    outline: "none",
+        border: "none",
+        fontSize: 18,
+})} onClick={() =>  router.push("/register")} >Register</button></div> }
+          </div>
           </div></div>
     </div>
   );

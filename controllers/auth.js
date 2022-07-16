@@ -1,11 +1,9 @@
-import { hash } from 'bcryptjs';
-import { PrismaClient } from '@prisma/client'
+const PrismaClient = require("@prisma/client").PrismaClient;
+const prisma = new PrismaClient();
+const { hash } = require('bcryptjs');
 
-const prisma = new PrismaClient()
-
-export default async function handler(req, res) {
-
-    if (req.method === 'POST'){
+const authController = {
+  register: async (req, res) => {
     const {
         name,
          email,
@@ -23,7 +21,13 @@ export default async function handler(req, res) {
          }
         });
         res.status(201).json({ message: 'User created', ...post })
-        res.json(post);
-        prisma.$disconnect();}
-  }
+    
+    prisma.$disconnect();
+  },
+
   
+
+  
+};
+
+module.exports = authController;
