@@ -134,7 +134,7 @@ const handle_delete = (id) => {
             })}
           ></div>
           {get_note.isLoading ? <text>Loading...</text> : <div>
-            {get_note.data.data.notes.length == 0 ? <text>No note, add new note</text> : <div>{get_note.data.data.notes.map((note) => (
+            {get_note.data.data.notes.length === 0 ? <text>No note, add new note</text> : <div>{get_note.data.data.notes.map((note) => (
               <AnimatePresence key={note.id}>
         <motion.div
         initial={{ opacity: 0, y: 20 }}
