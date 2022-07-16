@@ -1,5 +1,10 @@
 {
+  "theme_color": "#bd10e0",
+  "background_color": "#9b9b9b",
   "display": "standalone",
-  "short_name": "Notes"
-
+  "scope": "/",
+  "start_url": "/",
+  "name": "notes",
+  "description": "a note taking app",
+  "short_name": "notes"
 }
