@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import facepaint from "facepaint";
 import { BsJournalPlus, BsJournalX, BsJournalText } from 'react-icons/bs';
@@ -71,6 +72,18 @@ const handle_delete = (id) => {
 }
   return (
     <div>
+      <Head>
+       
+       <meta charset="utf-8" />
+ 
+ <meta name="description" content="description of your project" />
+ <meta name="theme-color" content="#000" />
+       <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
+       <link rel="manifest" href="/manifest.json" />
+ <link rel="shortcut icon" href="/favicon.ico" />
+ <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+     
+       </Head>
       <AnimatePresence
                  initial={false}
                  exitBeforeEnter={true}
