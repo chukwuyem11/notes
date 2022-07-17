@@ -18,7 +18,7 @@ class MyDocument extends Document {
   <meta name="description" content="description of your project" />
   <meta name="theme-color" content="#000" />
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-icon.png"></link>
       
