@@ -14,13 +14,14 @@ class MyDocument extends Document {
         <Head>
        
         <meta charset="utf-8" />
+  {/* <meta http-equiv="X-UA-Compatible" content="IE=edge" /> */}
   
   <meta name="description" content="description of your project" />
   <meta name="theme-color" content="#000" />
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+  <link rel="apple-touch-icon" href="/apple-touch.png"></link>
       
         </Head>
         <body>
