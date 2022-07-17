@@ -28,8 +28,8 @@
             "type": "image/png"
         },
         {
-            "src": "maskable.png",
-            "sizes": "48x48",
+            "src": "maskable_icon.png",
+            "sizes": "1024x1024",
             "type": "image/x-icon",
             "purpose": "maskable"
         }
