@@ -5,6 +5,7 @@ import { css, jsx } from "@emotion/react";
 import facepaint from "facepaint";
 import axios from "axios";
 import { useQuery, useMutation } from "react-query";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 
 const breakpoints = [576, 768, 992, 1200];
@@ -30,6 +31,7 @@ const Signup = () => {
             setPassword("")
             setEmail("")
             setName("")
+            signIn()
             console.log(response)
           })
           .catch((error) => {
